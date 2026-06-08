@@ -3,383 +3,477 @@ import Header from "@/components/Header";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const features = [
+const cafeHighlights = [
   {
-    title: "Thoughtful Details",
-    body: "Every element is chosen with intention. From the first point of contact to the finishing touch, nothing is left to chance.",
+    label: "Fresh Coffee",
+    desc: "Espresso, flat white, latte & more",
+    dot: "#04639B",
   },
   {
-    title: "Warm Service",
-    body: "A guest should feel acknowledged, welcomed and valued. The experience begins long before the first interaction.",
+    label: "Cakes & Pastries",
+    desc: "Made fresh — sweet, indulgent & lovely",
+    dot: "#7A1232",
   },
   {
-    title: "A Polished Experience",
-    body: "Refined, calm and consistently beautiful. A standard of presentation that quietly says everything it needs to.",
+    label: "Cosy Seating",
+    desc: "Relax and take your time with us",
+    dot: "#04639B",
+  },
+  {
+    label: "Takeaway Available",
+    desc: "Perfect when you're on the go",
+    dot: "#617DA7",
   },
 ];
 
-// ─── Sections ─────────────────────────────────────────────────────────────────
+const menuCategories = [
+  {
+    name: "Coffee",
+    items: [
+      { name: "Espresso", price: "£2.50" },
+      { name: "Americano", price: "£3.00" },
+      { name: "Cappuccino", price: "£3.50" },
+      { name: "Latte", price: "£3.50" },
+    ],
+  },
+  {
+    name: "Tea & Hot Drinks",
+    items: [
+      { name: "English Breakfast Tea", price: "£2.80" },
+      { name: "Herbal Tea", price: "£3.00" },
+      { name: "Hot Chocolate", price: "£3.80" },
+    ],
+  },
+  {
+    name: "Cakes & Pastries",
+    items: [
+      { name: "Croissant", price: "£2.95" },
+      { name: "Pain au Chocolat", price: "£3.25" },
+      { name: "Cake Slice", price: "£4.25" },
+    ],
+  },
+  {
+    name: "Breakfast",
+    items: [
+      { name: "Toast & Jam", price: "£3.95" },
+      { name: "Granola Bowl", price: "£5.95" },
+      { name: "Breakfast Sandwich", price: "£6.95" },
+    ],
+  },
+  {
+    name: "Lunch",
+    items: [
+      { name: "Soup of the Day", price: "£6.50" },
+      { name: "Sandwich Selection", price: "£6.95" },
+      { name: "Quiche & Salad", price: "£8.95" },
+    ],
+  },
+];
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
   return (
-    <section className="bg-white py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
-        {/* Copy */}
-        <div>
-          <div className="flex items-center gap-2.5 mb-7">
-            <div className="w-0.5 h-5 bg-[#7A1232] rounded-full" />
-            <span
-              className="text-xs uppercase tracking-widest text-[#617DA7]"
-              style={{ letterSpacing: "0.22em" }}
-            >
-              Introducing MA CHÉRIE
-            </span>
-          </div>
-
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl text-[#0C1620] leading-tight mb-7"
-            style={{ fontFamily: "var(--font-playfair)" }}
-          >
-            A refined destination for beautiful moments.
-          </h1>
-
-          <p className="text-[#617DA7] text-lg leading-relaxed mb-10 max-w-lg">
-            MA CHÉRIE brings together thoughtful details, warm service and a
-            polished experience designed to feel personal from the very first
-            moment.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#04639B] text-white text-sm rounded-full hover:bg-[#035485] transition-colors"
-              style={{ letterSpacing: "0.04em" }}
-            >
-              Start an enquiry
-            </a>
-            <a
-              href="#experience"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#617DA7] border-opacity-30 text-[#04639B] text-sm rounded-full hover:bg-[#EAF3F8] transition-colors"
-            >
-              Explore the experience <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Visual card stack */}
-        <div className="relative h-[400px] sm:h-[460px] lg:h-[500px]">
-          {/* Back card */}
-          <div
-            className="absolute inset-8 rounded-3xl shadow-md"
-            style={{
-              background: "linear-gradient(135deg, #B8D4EC, #A0C4E0)",
-              transform: "rotate(-3deg)",
-            }}
-          />
-          {/* Mid card */}
-          <div
-            className="absolute inset-5 rounded-3xl shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #D0E8F8, #BCDAF0)",
-              transform: "rotate(1deg)",
-            }}
-          />
-          {/* Front card */}
-          <div className="absolute inset-0 bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-[#EAF3F8]">
-            <div className="h-1 bg-[#04639B]" />
-            <div className="flex-1 flex flex-col items-center justify-center px-8 sm:px-10 py-8 gap-6">
-              <Image
-                src="/images/ma-cherie-wordmark-blue-transparent.svg"
-                alt="MA CHÉRIE"
-                width={180}
-                height={54}
-                className="w-36 sm:w-44 h-auto"
-              />
-              <div className="flex items-center gap-3 w-full max-w-xs">
-                <div className="flex-1 h-px bg-[#EAF3F8]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#7A1232]" />
-                <div className="flex-1 h-px bg-[#EAF3F8]" />
-              </div>
-              <div className="w-full space-y-2.5">
-                {[
-                  "Thoughtful details in every moment",
-                  "Warm, personal service",
-                  "A polished brand experience",
-                ].map((text) => (
-                  <div
-                    key={text}
-                    className="flex items-center gap-3 bg-[#EAF3F8] rounded-xl px-4 py-3"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#617DA7] flex-shrink-0" />
-                    <span className="text-sm" style={{ color: "rgba(12,22,32,0.65)" }}>
-                      {text}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="h-0.5 bg-[#7A1232]" />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Intro() {
-  return (
-    <section id="about" className="bg-[#EAF3F8] py-20 lg:py-28">
-      <div className="max-w-2xl mx-auto px-6 text-center">
-        <p
-          className="text-xs uppercase text-[#04639B] mb-5"
-          style={{ letterSpacing: "0.32em" }}
-        >
-          MA CHÉRIE
-        </p>
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="h-px w-14" style={{ background: "rgba(97,125,167,0.3)" }} />
-          <div className="w-1 h-1 rounded-full bg-[#7A1232]" />
-          <div className="h-px w-14" style={{ background: "rgba(97,125,167,0.3)" }} />
-        </div>
-        <h2
-          className="text-3xl sm:text-4xl text-[#0C1620] leading-snug mb-6"
-          style={{ fontFamily: "var(--font-playfair)" }}
-        >
-          Elegant, considered and made to feel personal.
-        </h2>
-        <p className="text-[#617DA7] leading-relaxed text-base sm:text-lg">
-          From first impression to final detail, the brand experience should
-          feel soft, polished and quietly memorable.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function Features() {
-  return (
-    <section id="experience" className="bg-white py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="bg-[#EAF3F8] rounded-2xl p-8 lg:p-9"
-            >
-              <div
-                className="w-11 h-11 rounded-full flex items-center justify-center mb-6"
-                style={{ border: "2px solid rgba(4,99,155,0.2)" }}
-              >
-                <div className="w-3 h-3 rounded-full bg-[#04639B]" />
-              </div>
-              <h3
-                className="text-xl text-[#0C1620] mb-3"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                {f.title}
-              </h3>
-              <p className="text-[#617DA7] leading-relaxed text-sm">{f.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BrandExperience() {
-  return (
-    <section className="bg-[#EAF3F8] py-20 lg:py-28">
+    <section className="bg-white py-14 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         {/* Copy */}
         <div>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-0.5 h-5 bg-[#7A1232] rounded-full" />
-            <span
-              className="text-xs uppercase text-[#617DA7]"
-              style={{ letterSpacing: "0.22em" }}
-            >
-              The MA CHÉRIE Experience
+          <div className="inline-flex items-center gap-2 bg-[#EAF3F8] rounded-full px-4 py-1.5 mb-7">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#7A1232]" />
+            <span className="text-xs text-[#04639B] font-medium tracking-wide">
+              Now Open · Abingdon
             </span>
           </div>
-          <h2
-            className="text-3xl sm:text-4xl text-[#0C1620] leading-snug mb-6"
+
+          <h1
+            className="text-4xl sm:text-5xl lg:text-[3.2rem] text-[#0C1620] leading-tight mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            A brand experience that stays with you.
-          </h2>
-          <p className="text-[#617DA7] leading-relaxed mb-5">
-            MA CHÉRIE is built on the belief that the finest experiences are
-            felt before they are seen. It is in the weight of the detail, the
-            warmth of the welcome, and the quiet confidence that everything has
-            been considered.
+            A cosy café for coffee, cakes and beautiful moments.
+          </h1>
+
+          <p className="text-[#617DA7] text-lg leading-relaxed mb-10 max-w-lg">
+            Welcome to MA CHÉRIE — a relaxed café serving comforting drinks,
+            sweet treats and simple moments to enjoy with the people you love.
           </p>
-          <p className="text-[#617DA7] leading-relaxed mb-9">
-            From the first touchpoint to the last, every interaction is an
-            opportunity to make something feel exactly right.
-          </p>
-          <blockquote className="border-l-2 border-[#04639B] pl-5">
-            <p
-              className="italic text-[#0C1620] text-lg leading-relaxed"
-              style={{ fontFamily: "var(--font-playfair)" }}
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="#menu"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#04639B] text-white text-sm rounded-full hover:bg-[#035485] transition-colors font-medium shadow-md shadow-[#04639B]/20"
             >
-              &ldquo;Designed to feel personal, polished and unmistakably MA
-              CHÉRIE.&rdquo;
-            </p>
-          </blockquote>
+              View Menu
+            </a>
+            <a
+              href="tel:+440000000000"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-[#617DA7]/30 text-[#0C1620] text-sm rounded-full hover:border-[#04639B] hover:bg-[#EAF3F8] transition-all"
+            >
+              <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338c0-.608.386-1.15.966-1.341l3.378-1.126a.75.75 0 01.857.28l1.75 2.625a.75.75 0 01-.185.998L7.2 8.91a.75.75 0 00-.24.857 10.5 10.5 0 005.273 5.273.75.75 0 00.857-.24l1.136-1.82a.75.75 0 01.998-.185l2.625 1.75a.75.75 0 01.28.857l-1.126 3.378a1.375 1.375 0 01-1.341.966C7.574 21.75 2.25 16.426 2.25 9.75v-3.412z" />
+              </svg>
+              Call Now
+            </a>
+          </div>
         </div>
 
-        {/* Decorative panel */}
-        <div
-          className="rounded-3xl p-10 relative overflow-hidden flex flex-col items-center justify-center gap-8 min-h-[360px]"
-          style={{ background: "#04639B" }}
-        >
+        {/* Café visual panel */}
+        <div className="relative">
+          {/* Warm background card */}
           <div
-            className="absolute rounded-full pointer-events-none"
+            className="rounded-3xl p-7 shadow-xl"
             style={{
-              width: 288,
-              height: 288,
-              top: -80,
-              right: -80,
-              background: "rgba(255,255,255,0.05)",
+              background: "linear-gradient(140deg, #FFF8F0 0%, #EAF3F8 100%)",
             }}
-          />
-          <div
-            className="absolute rounded-full pointer-events-none"
-            style={{
-              width: 208,
-              height: 208,
-              bottom: -64,
-              left: -64,
-              background: "rgba(255,255,255,0.05)",
-            }}
-          />
-          <div
-            className="absolute rounded-full pointer-events-none"
-            style={{
-              width: 56,
-              height: 56,
-              top: 20,
-              left: 20,
-              border: "1px solid rgba(255,255,255,0.1)",
-            }}
-          />
-          <div
-            className="absolute rounded-full pointer-events-none"
-            style={{
-              width: 36,
-              height: 36,
-              bottom: 20,
-              right: 20,
-              border: "1px solid rgba(255,255,255,0.1)",
-            }}
-          />
-          <div
-            className="absolute rounded-full pointer-events-none"
-            style={{ width: 4, height: 4, top: 28, right: 40, background: "#7A1232" }}
-          />
-          <div
-            className="absolute rounded-full pointer-events-none"
-            style={{ width: 4, height: 4, bottom: 36, left: 40, background: "#7A1232" }}
-          />
-          <Image
-            src="/images/ma-cherie-wordmark-white-transparent.svg"
-            alt="MA CHÉRIE"
-            width={200}
-            height={60}
-            className="relative z-10 w-40 sm:w-48 h-auto"
-          />
-          <div className="relative z-10 flex items-center gap-3 w-full max-w-[200px]">
-            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.2)" }} />
-            <div className="w-1 h-1 rounded-full bg-[#7A1232]" />
-            <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.2)" }} />
-          </div>
-          <p
-            className="relative z-10 text-xs uppercase"
-            style={{ color: "rgba(255,255,255,0.45)", letterSpacing: "0.28em" }}
           >
-            Est. 2024
-          </p>
+            {/* Logo card */}
+            <div className="bg-white rounded-2xl px-6 py-5 shadow-sm flex flex-col items-center mb-5">
+              <Image
+                src="/images/ma-cherie-wordmark-blue-transparent.svg"
+                alt="MA CHÉRIE"
+                width={180}
+                height={52}
+                className="w-36 h-auto mb-2"
+              />
+              <p className="text-xs text-[#617DA7] tracking-widest uppercase">
+                Café & Pâtisserie
+              </p>
+            </div>
+
+            {/* Feature rows */}
+            <div className="space-y-2.5">
+              {cafeHighlights.map((item) => (
+                <div
+                  key={item.label}
+                  className="bg-white/80 rounded-xl px-4 py-3 flex items-center gap-3.5 shadow-sm"
+                >
+                  <div
+                    className="w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ background: item.dot }}
+                  />
+                  <div>
+                    <p className="text-sm font-semibold text-[#0C1620] leading-tight">
+                      {item.label}
+                    </p>
+                    <p className="text-xs text-[#617DA7] mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Opening hours chip */}
+            <div className="mt-4 bg-[#04639B] rounded-xl px-4 py-3 flex items-center justify-between">
+              <span className="text-white text-xs font-medium">Mon–Sat</span>
+              <span className="text-white/80 text-xs">8:00am – 5:00pm</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
+// ─── Info Strip ───────────────────────────────────────────────────────────────
+
+function InfoStrip() {
+  return (
+    <section className="bg-[#EAF3F8] border-y border-[#D4E8F5]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#C8DFF0]">
+
+          {/* Hours */}
+          <div className="flex items-center gap-4 py-5 sm:px-8 sm:first:pl-0 sm:last:pr-0">
+            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs text-[#617DA7] uppercase tracking-wide mb-0.5">Opening Hours</p>
+              <p className="text-sm font-semibold text-[#0C1620]">Mon–Sat: 8:00am – 5:00pm</p>
+              <p className="text-xs text-[#617DA7] opacity-50">placeholder</p>
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="flex items-center gap-4 py-5 sm:px-8">
+            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs text-[#617DA7] uppercase tracking-wide mb-0.5">Location</p>
+              <p className="text-sm font-semibold text-[#0C1620]">Abingdon</p>
+              <p className="text-xs text-[#617DA7] opacity-50">placeholder</p>
+            </div>
+          </div>
+
+          {/* Phone */}
+          <div className="flex items-center gap-4 py-5 sm:px-8">
+            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338c0-.608.386-1.15.966-1.341l3.378-1.126a.75.75 0 01.857.28l1.75 2.625a.75.75 0 01-.185.998L7.2 8.91a.75.75 0 00-.24.857 10.5 10.5 0 005.273 5.273.75.75 0 00.857-.24l1.136-1.82a.75.75 0 01.998-.185l2.625 1.75a.75.75 0 01.28.857l-1.126 3.378a1.375 1.375 0 01-1.341.966C7.574 21.75 2.25 16.426 2.25 9.75v-3.412z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs text-[#617DA7] uppercase tracking-wide mb-0.5">Call</p>
+              <a href="tel:+440000000000" className="text-sm font-semibold text-[#04639B] hover:underline">
+                +44 (0)0000 000000
+              </a>
+              <p className="text-xs text-[#617DA7] opacity-50">placeholder</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Menu ─────────────────────────────────────────────────────────────────────
+
+function Menu() {
+  return (
+    <section id="menu" className="bg-white py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+
+        {/* Header */}
+        <div className="mb-10 lg:mb-14">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-0.5 h-5 bg-[#7A1232] rounded-full" />
+            <span className="text-xs uppercase tracking-widest text-[#617DA7]">
+              What we serve
+            </span>
+          </div>
+          <h2
+            className="text-3xl sm:text-4xl text-[#0C1620] mb-3"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Our Menu
+          </h2>
+          <p className="text-[#617DA7] max-w-xl">
+            A simple selection of café favourites.
+          </p>
+          <p className="text-xs text-[#617DA7] opacity-50 mt-1">
+            Sample menu — items and prices will be confirmed before launch.
+          </p>
+        </div>
+
+        {/* Category grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {menuCategories.map((cat) => (
+            <div
+              key={cat.name}
+              className="bg-[#EAF3F8] rounded-2xl p-6 flex flex-col"
+            >
+              <h3
+                className="text-lg text-[#0C1620] mb-4 pb-3 border-b border-[#C8DFF0]"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                {cat.name}
+              </h3>
+              <ul className="space-y-3 flex-1">
+                {cat.items.map((item) => (
+                  <li key={item.name} className="flex items-center justify-between gap-4">
+                    <span className="text-sm text-[#0C1620]">{item.name}</span>
+                    <span className="text-sm font-semibold text-[#04639B] flex-shrink-0">
+                      {item.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-xs text-[#617DA7] opacity-40 mt-8">
+          Prices are indicative only and subject to change before launch.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ─── Visit ────────────────────────────────────────────────────────────────────
+
+function Visit() {
+  return (
+    <section id="visit" className="bg-[#EAF3F8] py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        {/* Copy */}
+        <div>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-0.5 h-5 bg-[#7A1232] rounded-full" />
+            <span className="text-xs uppercase tracking-widest text-[#617DA7]">
+              Find us
+            </span>
+          </div>
+          <h2
+            className="text-3xl sm:text-4xl text-[#0C1620] leading-snug mb-5"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Visit MA CHÉRIE
+          </h2>
+          <p className="text-[#617DA7] leading-relaxed mb-8">
+            Pop in for a quiet coffee, meet a friend for lunch, or take
+            something sweet away with you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="tel:+440000000000"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#04639B] text-white text-sm rounded-full hover:bg-[#035485] transition-colors font-medium"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338c0-.608.386-1.15.966-1.341l3.378-1.126a.75.75 0 01.857.28l1.75 2.625a.75.75 0 01-.185.998L7.2 8.91a.75.75 0 00-.24.857 10.5 10.5 0 005.273 5.273.75.75 0 00.857-.24l1.136-1.82a.75.75 0 01.998-.185l2.625 1.75a.75.75 0 01.28.857l-1.126 3.378a1.375 1.375 0 01-1.341.966C7.574 21.75 2.25 16.426 2.25 9.75v-3.412z" />
+              </svg>
+              Call Now
+            </a>
+            <a
+              href="https://maps.google.com/?q=Abingdon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 border border-[#04639B]/30 text-[#04639B] text-sm rounded-full hover:bg-white hover:border-[#04639B] transition-all"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+        {/* Info card */}
+        <div className="bg-white rounded-3xl shadow-md p-7 space-y-5">
+
+          {[
+            {
+              icon: (
+                <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              ),
+              label: "Address",
+              value: "Abingdon, Oxfordshire",
+              note: "Full address — placeholder",
+            },
+            {
+              icon: (
+                <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+                </svg>
+              ),
+              label: "Opening Hours",
+              value: "Monday – Saturday: 8:00am – 5:00pm",
+              note: "Hours — placeholder",
+            },
+            {
+              icon: (
+                <svg className="w-4 h-4 text-[#04639B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338c0-.608.386-1.15.966-1.341l3.378-1.126a.75.75 0 01.857.28l1.75 2.625a.75.75 0 01-.185.998L7.2 8.91a.75.75 0 00-.24.857 10.5 10.5 0 005.273 5.273.75.75 0 00.857-.24l1.136-1.82a.75.75 0 01.998-.185l2.625 1.75a.75.75 0 01.28.857l-1.126 3.378a1.375 1.375 0 01-1.341.966C7.574 21.75 2.25 16.426 2.25 9.75v-3.412z" />
+                </svg>
+              ),
+              label: "Telephone",
+              value: "+44 (0)0000 000000",
+              note: "Phone — placeholder",
+            },
+          ].map(({ icon, label, value, note }) => (
+            <div key={label} className="flex items-start gap-4">
+              <div className="w-8 h-8 rounded-full bg-[#EAF3F8] flex items-center justify-center flex-shrink-0 mt-0.5">
+                {icon}
+              </div>
+              <div>
+                <p className="text-xs text-[#617DA7] uppercase tracking-wide mb-0.5">{label}</p>
+                <p className="text-sm font-medium text-[#0C1620]">{value}</p>
+                <p className="text-xs text-[#617DA7] opacity-40">{note}</p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Contact CTA ──────────────────────────────────────────────────────────────
+
 function ContactCTA() {
   return (
-    <section id="contact" className="bg-[#04639B] py-20 lg:py-28">
+    <section id="contact" className="bg-[#04639B] py-16 lg:py-24">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <Image
           src="/images/ma-cherie-wordmark-white-transparent.svg"
           alt="MA CHÉRIE"
-          width={160}
-          height={48}
-          className="mx-auto mb-10 w-32 sm:w-40 h-auto"
+          width={200}
+          height={58}
+          className="mx-auto mb-8 w-40 sm:w-48 h-auto"
         />
         <h2
-          className="text-4xl sm:text-5xl text-white leading-tight mb-5"
+          className="text-3xl sm:text-4xl text-white leading-tight mb-4"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          Let&apos;s create something beautiful.
+          Planning a visit?
         </h2>
-        <p className="text-lg mb-10 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Whether you have a question, a project in mind, or simply want to
-          learn more, we&apos;d love to hear from you.
+        <p className="text-lg mb-10 max-w-md mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+          Call ahead, ask about today&apos;s cakes, or speak to us about
+          anything you need before visiting.
         </p>
         <a
-          href="mailto:hello@macherie.com"
-          className="inline-flex items-center px-10 py-4 bg-white text-[#04639B] text-sm font-semibold rounded-full hover:bg-[#EAF3F8] transition-colors mb-14"
-          style={{ letterSpacing: "0.04em" }}
+          href="tel:+440000000000"
+          className="inline-flex items-center gap-2.5 px-10 py-4 bg-white text-[#04639B] text-sm font-semibold rounded-full hover:bg-[#EAF3F8] transition-colors shadow-xl"
         >
-          Contact MA CHÉRIE
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.338c0-.608.386-1.15.966-1.341l3.378-1.126a.75.75 0 01.857.28l1.75 2.625a.75.75 0 01-.185.998L7.2 8.91a.75.75 0 00-.24.857 10.5 10.5 0 005.273 5.273.75.75 0 00.857-.24l1.136-1.82a.75.75 0 01.998-.185l2.625 1.75a.75.75 0 01.28.857l-1.126 3.378a1.375 1.375 0 01-1.341.966C7.574 21.75 2.25 16.426 2.25 9.75v-3.412z" />
+          </svg>
+          Call MA CHÉRIE
         </a>
-        <div
-          className="pt-10 grid sm:grid-cols-3 gap-8 text-center"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}
-        >
-          {[
-            { label: "Email", value: "hello@macherie.com" },
-            { label: "Telephone", value: "+44 (0)000 000 0000" },
-            { label: "Location", value: "London, United Kingdom" },
-          ].map(({ label, value }) => (
-            <div key={label}>
-              <p
-                className="text-xs uppercase mb-1.5"
-                style={{ color: "rgba(255,255,255,0.4)", letterSpacing: "0.22em" }}
-              >
-                {label}
-              </p>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
-                {value}
-              </p>
-              <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.25)" }}>
-                (placeholder)
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
 
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
 function Footer() {
+  const footerLinks = [
+    { label: "Menu", href: "#menu" },
+    { label: "Visit", href: "#visit" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
     <footer className="bg-[#0C1620] py-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-5">
-        <Image
-          src="/images/ma-cherie-wordmark-white-transparent.svg"
-          alt="MA CHÉRIE"
-          width={130}
-          height={40}
-          className="w-28 h-auto"
-        />
-        <p className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>
-          © 2026 MA CHÉRIE. All rights reserved.
-        </p>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <Image
+            src="/images/ma-cherie-wordmark-white-transparent.svg"
+            alt="MA CHÉRIE"
+            width={160}
+            height={46}
+            className="w-36 h-auto"
+          />
+          <nav className="flex items-center gap-6" aria-label="Footer">
+            {footerLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="text-sm text-white/40 hover:text-white/80 transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div className="mt-8 pt-6 border-t border-white/10 text-center sm:text-left">
+          <p className="text-xs text-white/25">
+            © 2026 MA CHÉRIE. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );
@@ -393,9 +487,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Intro />
-        <Features />
-        <BrandExperience />
+        <InfoStrip />
+        <Menu />
+        <Visit />
         <ContactCTA />
       </main>
       <Footer />
