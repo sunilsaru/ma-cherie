@@ -43,7 +43,7 @@ export default function Testimonials() {
               className="bg-white p-8 border border-[#E8DDD0] flex flex-col gap-6"
             >
               <div className="font-[family-name:var(--font-playfair)] text-[#B8966E] text-4xl leading-none select-none">
-                "
+                &ldquo;
               </div>
               <p className="font-[family-name:var(--font-playfair)] italic text-[#2C2420] text-base leading-relaxed flex-1">
                 {quote}

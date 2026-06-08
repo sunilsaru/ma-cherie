@@ -11,6 +11,7 @@
   --font-sans: var(--font-lato);
   --font-display: var(--font-playfair);
 
+  /* Legacy French café palette */
   --color-cream: #FAF7F2;
   --color-ivory: #F0EAD6;
   --color-gold: #B8966E;
@@ -19,6 +20,14 @@
   --color-burgundy-dark: #4A1A26;
   --color-charcoal: #2C2420;
   --color-muted: #7A6E68;
+
+  /* MA CHÉRIE brand palette */
+  --color-mc-blue: #04639B;
+  --color-mc-soft-blue: #617DA7;
+  --color-mc-powder: #EAF3F8;
+  --color-mc-navy: #0C1620;
+  --color-mc-white: #FFFFFF;
+  --color-mc-berry: #7A1232;
 }
 
 html {

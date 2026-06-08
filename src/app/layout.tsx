@@ -16,9 +16,12 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Ma Chérie — French Café & Restaurant",
-  description:
-    "An intimate French-inspired dining experience. Discover seasonal menus, handcrafted pastries, and curated wines in the heart of the city.",
+  title: "MA CHÉRIE",
+  description: "A refined boutique brand experience by MA CHÉRIE.",
+  icons: {
+    icon: "/images/ma-cherie-favicon-512.png",
+    apple: "/images/ma-cherie-apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

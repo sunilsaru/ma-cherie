@@ -19,7 +19,7 @@ export default function About() {
                   Since 2024
                 </div>
                 <div className="font-[family-name:var(--font-playfair)] italic text-[#D4B896] text-4xl leading-snug">
-                  "La vie est trop courte pour une mauvaise cuisine."
+                  &ldquo;La vie est trop courte pour une mauvaise cuisine.&rdquo;
                 </div>
                 <div className="h-px w-12 bg-[#B8966E]/60" />
                 <p className="text-white/40 text-xs uppercase tracking-[0.2em]">
