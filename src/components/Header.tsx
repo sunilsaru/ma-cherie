@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Menu", href: "#menu" },
+  { label: "Hours", href: "#hours" },
   { label: "Visit", href: "#visit" },
   { label: "Contact", href: "#contact" },
 ];
@@ -21,8 +22,8 @@ export default function Header() {
           <Image
             src="/images/ma-cherie-wordmark-blue-transparent.svg"
             alt="MA CHÉRIE"
-            width={180}
-            height={50}
+            width={200}
+            height={56}
             className="h-12 w-auto"
             priority
           />
@@ -41,7 +42,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="tel:+440000000000"
+          href="tel:+441235634048"
           className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-[#04639B] text-white text-sm rounded-full hover:bg-[#035485] transition-colors font-medium"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -81,7 +82,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="tel:+440000000000"
+            href="tel:+441235634048"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#04639B] text-white text-sm rounded-full hover:bg-[#035485] transition-colors font-medium"
           >

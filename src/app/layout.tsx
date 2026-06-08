@@ -19,7 +19,7 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: "MA CHÉRIE",
-  description: "A refined boutique brand experience by MA CHÉRIE.",
+  description: "MA CHÉRIE is a cosy café in Abingdon serving fresh brunch, sweet treats, sharing boards and carefully made drinks.",
   icons: {
     icon: "/images/ma-cherie-favicon-512.png",
     apple: "/images/ma-cherie-apple-touch-icon.png",
